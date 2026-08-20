@@ -17,6 +17,10 @@ on:
   push:
     tags: ["v*"]
 
+# softprops/action-gh-release 需要写 release 权限
+permissions:
+  contents: write
+
 jobs:
   build:
     name: Build Linux x86_64
