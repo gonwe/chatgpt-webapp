@@ -1,4 +1,64 @@
+
 # ChatGPT (Unofficial Desktop Wrapper)
+
+English is the default language of this README. See the [简体中文](#简体中文) section below for the Chinese version.
+
+An unofficial ChatGPT desktop wrapper for Linux.
+
+This project uses [Tauri](https://tauri.app/) to display the official ChatGPT web application at [https://chatgpt.com/](https://chatgpt.com/) in a native desktop window. It is intended for personal Linux desktop use and for maintaining the Arch Linux AUR package.
+
+## Features
+
+- Lightweight native Tauri window using the system WebKitGTK renderer
+- Direct access to [https://chatgpt.com/](https://chatgpt.com/)
+- Linux and WebKitGTK font-rendering adjustments, including CJK fonts
+- Wayland compatibility handling
+- Arch Linux and AUR packaging support
+
+## What this project does not do
+
+- It does not provide ChatGPT or any AI service.
+- It does not reimplement or modify ChatGPT's core functionality.
+- It does not include any ChatGPT server-side code.
+- It does not redistribute the official website or its content.
+
+## Install on Arch Linux
+
+Install the AUR package with an AUR helper such as `yay`:
+
+```bash
+yay -S chatgpt-webapp-desktop-bin
+```
+
+The package metadata and build files are maintained in the [AUR package repository](https://aur.archlinux.org/packages/chatgpt-webapp-desktop-bin).
+
+## Build from source
+
+Requirements include Rust, `cargo-tauri`, and WebKitGTK 4.1 development libraries.
+
+```bash
+cargo tauri build --bundles deb
+```
+
+The frontend is configured to load `https://chatgpt.com/` directly. The release helper packages the Linux binary and icons for a GitHub Release:
+
+```bash
+./release.sh <github-user> <github-repo>
+```
+
+## Disclaimer
+
+This is an unofficial third-party project. It is not affiliated with, sponsored by, authorized by, or endorsed by OpenAI or ChatGPT's owners.
+
+The names, trademarks, logos, website content, user interface, AI services, and other related resources belong to their respective rights holders. This repository contains only the desktop wrapper, Linux integration, and packaging files.
+
+If a rights holder believes that this project uses their materials inappropriately, please open a GitHub issue and the project will be reviewed promptly.
+
+## License
+
+Original desktop-wrapper and packaging code in this repository is available under the license declared by the project. ChatGPT and related names, trademarks, logos, website content, and services are not covered by that license.
+
+## 简体中文
 
 一个面向 Linux 的非官方 ChatGPT 桌面封装。
 
