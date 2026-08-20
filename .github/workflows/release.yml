@@ -39,6 +39,12 @@ jobs:
       - name: Install tauri-cli
         run: cargo install tauri-cli --version "^2"
 
+      # dist/ 被 .gitignore 排除，不会进仓库；tauri build 需要它存在
+      - name: Create frontend dist placeholder
+        run: |
+          mkdir -p dist
+          printf '<!DOCTYPE html><html><head><meta charset="utf-8"><title>Loading</title></head><body><p>Loading...</p></body></html>' > dist/index.html
+
       - name: Build release binary
         run: cargo tauri build --no-bundle
 
