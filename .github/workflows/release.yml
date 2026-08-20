@@ -91,6 +91,8 @@ jobs:
             PKGBUILD
             .SRCINFO
             chatgpt-webapp-desktop-bin.desktop
+          # .SRCINFO 是隐藏文件，默认不上传
+          include-hidden-files: true
 
   aur:
     name: Publish to AUR
