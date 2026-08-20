@@ -1,0 +1,11 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Allows the chatgpt.com page to use the IPC capabilities of this app.",
+  "windows": ["main"],
+  "local": false,
+  "remote": {
+    "urls": ["https://chatgpt.com/*"]
+  },
+  "permissions": ["core:default", "allow-get-clipboard-image"]
+}

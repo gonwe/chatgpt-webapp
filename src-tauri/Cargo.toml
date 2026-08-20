@@ -1,0 +1,25 @@
+[package]
+name = "chatgpt-webapp-desktop"
+version = "0.1.0"
+description = "Unofficial ChatGPT desktop wrapper for Linux, built with Tauri"
+authors = ["gonwe"]
+edition = "2021"
+license = "MIT"
+repository = ""
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+    arboard = "3"
+    base64 = "0.22"
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+lto = true
+opt-level = "s"
+strip = true

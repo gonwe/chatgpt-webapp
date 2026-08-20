@@ -1,0 +1,62 @@
+# ChatGPT (Unofficial Desktop Wrapper)
+
+一个面向 Linux 的非官方 ChatGPT 桌面封装。
+
+本项目使用 [Tauri](https://tauri.app/) 将 ChatGPT 官方 Web 页面（[https://chatgpt.com/](https://chatgpt.com/)）封装为桌面应用，主要用于个人 Linux 桌面环境，并方便制作和维护 AUR 软件包。
+
+## 说明
+
+本项目：
+
+- 不提供 ChatGPT 的 AI/服务；
+- 不修改或重新实现其核心功能；
+- 不包含其服务端代码；
+- 直接加载官方 Web 页面（https://chatgpt.com/）；
+- 仅提供桌面窗口、Linux 适配及相关打包配置。
+
+## 功能
+
+- Tauri 原生桌面窗口（轻量，~5MB，系统 WebKitGTK 渲染）
+- 直接访问 https://chatgpt.com/
+- Linux / WebKitGTK 中文字体显示优化
+- Wayland 兼容处理
+- 适合 Arch Linux / AUR 打包使用
+
+## 构建
+
+```bash
+# 需要: rust, cargo-tauri, webkit2gtk-4.1 等
+cargo tauri build --bundles deb
+```
+
+## 打包发布
+
+```bash
+./release.sh <github-user> <github-repo>
+```
+
+## Arch Linux
+
+安装:
+
+```bash
+yay -S chatgpt-webapp-desktop-bin
+```
+
+## Disclaimer
+
+**本项目为非官方第三方项目，与 ChatGPT 及其所属公司不存在官方合作、授权、认可或隶属关系。**
+
+相关名称、商标、Logo、网站内容、界面、AI 服务及其他相关资源的知识产权归其各自权利人所有。
+
+本仓库仅包含第三方桌面封装、Linux 适配及打包相关代码。
+
+本项目不会对官方网页、服务或内容进行重新分发，使用过程中实际加载的内容来自官方服务（https://chatgpt.com/）。
+
+如果相关权利人认为本项目存在不适当使用，请通过 GitHub Issue 联系，我会及时处理。
+
+## License
+
+本仓库中由项目维护者原创的桌面封装及相关代码，可按照本仓库所声明的开源许可证使用。
+
+相关商标、Logo、网页内容及服务不属于本项目开源许可证的授权范围。
